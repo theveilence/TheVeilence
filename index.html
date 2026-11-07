@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Photostrip</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1 id="ttl"></h1><p id="sub"></p></header>
+<main>
+<div class="stage"><canvas id="cv" width="1200" height="3600"></canvas></div>
+<div>
+<div id="err"></div>
+<section><h2>1 · Warna background foto</h2><div class="sw" id="bgsw"></div>
+<p class="hint">Ini warna latar di dalam frame.</p></section>
+<section><h2>2 · Upload fotomu</h2><div id="slots"></div>
+<p class="hint" id="stat"></p>
+<p class="hint" style="border:1px dashed var(--ac);border-radius:8px;padding:8px;color:var(--tx)">Mau hasil paling rapi, sekelas remove.bg? Hapus background fotomu di <a href="https://www.remove.bg/id" target="_blank" rel="noopener" style="color:var(--ac)">remove.bg</a> dulu, download PNG-nya, lalu upload ke sini. PNG transparan langsung dipakai tanpa diproses ulang.</p>
+<p class="hint">Upload satu-satu per frame. Ketuk frame di preview untuk memilihnya.</p></section>
+<section><h2>3 · Atur foto <span id="selname"></span></h2>
+<div class="row"><label>Zoom</label><input type="range" id="zoom" min="0.3" max="3" step="0.01" value="1"></div>
+<div class="row"><label id="tollab">Potongan</label><input type="range" id="tol" min="10" max="120" value="45"></div>
+<div class="row"><button class="btn sm" id="clear">Buang foto</button></div>
+<p class="hint">Seret fotomu di preview untuk menggeser posisinya. Slider Potongan: geser ke kanan kalau ada bagian tubuh yang ikut hilang, ke kiri kalau background masih nempel. Mau ganti foto? Klik Buang foto, lalu upload ulang.</p></section>
+<button class="btn p" id="dl" style="width:100%;padding:13px;font-size:15px">Download PNG</button>
+</div>
+</main>
+<div id="out"><span>Kalau belum terunduh, tekan lama gambar ini untuk menyimpan. Ketuk di luar untuk menutup.</span><img id="oimg" alt="Hasil photostrip"></div>
+<script src="config.js"></script>
+<script src="assets/lib/model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
